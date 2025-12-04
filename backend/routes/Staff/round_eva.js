@@ -43,7 +43,7 @@ router.get('/:id_sys',verifyToken,requireRole('ฝ่ายบุคลากร
 // API สำหรับ Insert ข้อมูล
 router.post('/',verifyToken,requireRole('ฝ่ายบุคลากร'),async (req,res) => {
     try{
-        const {day_open,day_out,round_sys,year_sys,status_sys} = req.params
+        const {day_open,day_out,round_sys,year_sys,status_sys} = req.body
         const [rows] = await db.query(`insert into tb_system (day_open,day_out,round_sys,year_sys,status_sys) values (?,?,?,?,?)`,[day_open,day_out,round_sys,year_sys,status_sys])
         res.json({rows,message:'Insert Success'})
     }catch(err){
@@ -56,7 +56,7 @@ router.post('/',verifyToken,requireRole('ฝ่ายบุคลากร'),asy
 router.put('/:id_sys',verifyToken,requireRole('ฝ่ายบุคลากร'),async (req,res) => {
     try{
         const {id_sys} = req.params
-        const {day_open,day_out,round_sys,year_sys,status_sys} = req.params
+        const {day_open,day_out,round_sys,year_sys,status_sys} = req.body
         const [rows] = await db.query(`update tb_system set day_open=?,day_out=?,round_sys=?,year_sys=?,status_sys=? where id_sys='${id_sys}'`,[day_open,day_out,round_sys,year_sys,status_sys])
         res.json({rows,message:'Update Success'})
     }catch(err){

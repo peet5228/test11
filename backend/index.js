@@ -27,6 +27,18 @@ app.use('/api/Staff/member',member)
 const topic = require('./routes/Staff/topic')
 app.use('/api/Staff/topic',topic)
 
+const indicate = require('./routes/Staff/indicate')
+app.use('/api/Staff/indicate',indicate)
+
+const round_eva = require('./routes/Staff/round_eva')
+app.use('/api/Staff/round_eva',round_eva)
+
+const eva = require('./routes/Staff/eva')
+app.use('/api/Staff/eva',eva)
+
+const commit = require('./routes/Staff/commit')
+app.use('/api/Staff/commit',commit)
+
 app.use((req,res) => res.status(404).json({message:'ปิดปรับปรุง!!'}))
 
 app.listen(7000 , () => console.log('Server Run Port 7000'))
