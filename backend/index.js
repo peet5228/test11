@@ -20,12 +20,21 @@ app.use('/api/auth',auth)
 const profile = require('./routes/profile')
 app.use('/api/profile',profile)
 
+
 //eva
 const me = require('./routes/Eva/me')
 app.use('/api/Eva/me',me)
 
 const selfeva = require('./routes/Eva/selfeva')
 app.use('/api/Eva/selfeva',selfeva)
+
+// Staff ===================================================
+const member = require('./routes/Staff/member')
+app.use('/api/Staff/member',member)
+
+const topic = require('./routes/Staff/topic')
+app.use('/api/Staff/topic',topic)
+
 
 app.use((req,res) => res.status(404).json({message:'ปิดปรับปรุง!!'}))
 
