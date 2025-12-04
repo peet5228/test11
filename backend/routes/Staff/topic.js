@@ -53,7 +53,7 @@ router.post('/',verifyToken,requireRole('ฝ่ายบุคลากร'),asy
 })
 
 // API สำหรับ Update ข้อมูล
-router.update('/:id_topic',verifyToken,requireRole('ฝ่ายบุคลากร'),async (req,res) => {
+router.put('/:id_topic',verifyToken,requireRole('ฝ่ายบุคลากร'),async (req,res) => {
     try{
         const {id_topic} = req.params
         const {name_topic} = req.body
