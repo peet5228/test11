@@ -55,7 +55,7 @@ const fetch = async () => {
 }
 
 const add = (id_eva) => {
-    router.push({path:`Eva_commit/${id_eva}`})
+    router.push({path:`/Detail_eva/${id_eva}`})
 }
 
 onMounted(fetch)

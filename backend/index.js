@@ -28,6 +28,9 @@ app.use('/api/profile',profile)
 const show_eva = require('./routes/Commit/show_eva')
 app.use('/api/Commit/show_eva',show_eva)
 
+const detail_eva = require('./routes/Commit/detail_eva')
+app.use('/api/Commit/detail_eva',detail_eva)
+
 //eva
 const me = require('./routes/Eva/me')
 app.use('/api/Eva/me',me)

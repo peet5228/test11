@@ -8,6 +8,7 @@ import Selfeva from '@/views/Evaluatee/Selfeva.vue'
 import Check_score from '@/views/Evaluatee/Check_score.vue'
 import Score_eva from '@/views/Evaluatee/Score_eva.vue'
 import Committee from '@/views/Committee/index.vue'
+import Detail_eva from '@/views/Committee/Detail_eva.vue'
 
 // Staff
 import index from '@/views/Staff/index.vue'
@@ -51,6 +52,11 @@ const router = createRouter({
           path: '/Committee',
           name: 'Committee',
           component: Committee,
+        },
+        {
+          path: '/Detail_eva/:id_eva',
+          name: 'Detail_eva',
+          component: Detail_eva,
         },
       ]
     },
