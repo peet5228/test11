@@ -42,8 +42,10 @@ router.get('/:id_eva',verifyToken,requireRole('ฝ่ายบุคลากร
 })
 
 // API สำหรับ Insert ข้อมูล
-router.get('/',verifyToken,requireRole('ฝ่ายบุคลากร'),async (req,res) => {
+router.post('/:id_eva',verifyToken,requireRole('ฝ่ายบุคลากร'),async (req,res) => {
     try{
+        const {id_eva} =req.params
+        await dbb.query(`delete from tb_commit where id_eva='${id_eva}'`)
         const [rows] = await db.query(``)
         res.json(rows)
     }catch(err){
