@@ -20,6 +20,13 @@ app.use('/api/auth',auth)
 const profile = require('./routes/profile')
 app.use('/api/profile',profile)
 
+//eva
+const me = require('./routes/Eva/me')
+app.use('/api/Eva/me',me)
+
+const selfeva = require('./routes/Eva/selfeva')
+app.use('/api/Eva/selfeva',selfeva)
+
 app.use((req,res) => res.status(404).json({message:'ปิดปรับปรุง!!'}))
 
 app.listen(7000 , () => console.log('Server Run Port 7000'))
