@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <router-viwe></router-viwe>
+    <router-view></router-view>
   </v-app>
 </template>
 
