@@ -15,7 +15,11 @@ export default defineConfig({
     vueDevTools(),
   ],
   server : {
+<<<<<<< HEAD
+    port : 3000,
+=======
     port: 3000,
+>>>>>>> 75374c7c1703e7e42872d20c90d24f01b0e321ce
   },
   resolve: {
     alias: {
