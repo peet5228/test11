@@ -25,6 +25,10 @@ app.use('/api/profile',profile)
 
 
 //eva
+const show_eva = require('./routes/Commit/show_eva')
+app.use('/api/Commit/show_eva',show_eva)
+
+//eva
 const me = require('./routes/Eva/me')
 app.use('/api/Eva/me',me)
 
