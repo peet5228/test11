@@ -26,7 +26,7 @@
                                 <v-text-field v-model="confirmPassword" :error-messages="error.confirmPassword" type="password" label="ยืนยันรหัสผ่าน"></v-text-field>
                             </v-col>
                             <v-col cols="12">
-                                <v-text-field v-model="form.role" :error-messages="error.role" label="เลือกประเภทสมาชิก"></v-text-field>
+                                <v-select v-model="form.role" :items="['ฝ่ายบุคลากร','กรรมการประเมิน','ผู้รับการประเมินผล']" :error-messages="error.role" label="เลือกประเภทสมาชิก"></v-select>
                             </v-col>
                             <v-col cols="12" class="text-center">
                                 <v-btn class="btn-maroon text-white" type="submit">สมัคร</v-btn>
@@ -55,6 +55,7 @@ const form = ref({
 })
 const error = ref<Record<string,string>>({})
 const confirmPassword = ref('')
+const emailReget = /^[^\s]+@[^\s]+\.[^\s]{2,}$/i
 function vaildateForm(){
     error.value = {}
     const f = form.value
