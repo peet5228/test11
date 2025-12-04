@@ -38,7 +38,7 @@
                         <tbody>
                             <tr v-for="(items,index) in List" :key="items.id_commit">
                                 <td class="text-center border">{{ index+1 }}</td>
-                                <td class="text-center border">{{ items.id_member }}</td>
+                                <td class="text-center border">{{ nameOf(items.id_member) }}</td>
                                 <td class="text-center border">{{ items.role }}</td>
                                 <td class="text-center border">
                                     <!-- <v-btn class="text-white" color="warning" size="small" @click="edit(items)">แก้ไข</v-btn>&nbsp; -->
@@ -91,7 +91,9 @@ const fetch = async () => {
                 List.value.push({id_commit:null,id_member:'',role:''})
             }
         }
+        
     }catch(err){
+        console.log(res.data.bofore)
         console.error('Error Fetching',err)
     }
 }
@@ -125,7 +127,7 @@ const del = async (id_commit) => {
         if(!confirm('ต้องการลบใช่หรือไม่')) return
         await axios.delete(`${Staff}/commit/${id_commit}`,{headers:{Authorization : `Bearer ${token}`}})
         await fetch()
-        await reset()
+        // await reset()
     }catch(err){
         console.error('Error Delete')
     }

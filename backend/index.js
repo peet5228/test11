@@ -17,8 +17,19 @@ app.use('/uploads',express.static(path.join('uploads')))
 const auth = require('./routes/auth')
 app.use('/api/auth',auth)
 
+const dash = require('./routes/dash')
+app.use('/api/dash',dash)
+
 const profile = require('./routes/profile')
 app.use('/api/profile',profile)
+
+
+//eva
+const me = require('./routes/Eva/me')
+app.use('/api/Eva/me',me)
+
+const selfeva = require('./routes/Eva/selfeva')
+app.use('/api/Eva/selfeva',selfeva)
 
 // Staff ===================================================
 const member = require('./routes/Staff/member')
@@ -38,6 +49,12 @@ app.use('/api/Staff/eva',eva)
 
 const commit = require('./routes/Staff/commit')
 app.use('/api/Staff/commit',commit)
+
+const status = require('./routes/Staff/status')
+app.use('/api/Staff/status',status)
+
+const doc = require('./routes/Staff/doc')
+app.use('/api/Staff/doc',doc)
 
 app.use((req,res) => res.status(404).json({message:'ปิดปรับปรุง!!'}))
 

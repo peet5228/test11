@@ -56,12 +56,19 @@ const roles = [
     {title:'จัดการตัวชี้วัด',to:'/Indicate',role:'ฝ่ายบุคลากร'},
     {title:'จัดการรอบการประเมิน',to:'/Round_eva',role:'ฝ่ายบุคลากร'},
     {title:'จัดการแบบประเมิน',to:'/Eva',role:'ฝ่ายบุคลากร'},
+    
+    {title:'รายงานผลการประเมินของผู้รับการประเมิน',to:'/Score_evaList',role:'ฝ่ายบุคลากร'},
+    {title:'ผลสรุปการประเมินรายกรรมการ',to:'/Score_commitList',role:'ฝ่ายบุคลากร'},
+    {title:'สถานะการประเมินของผู้รับการประเมิน',to:'/StatusEva',role:'ฝ่ายบุคลากร'},
+    {title:'สถานะการประเมินของกรรมการประเมิน',to:'/StatusCommit',role:'ฝ่ายบุคลากร'},
+    {title:'แนบเอกสารสำหรับการประเมิน',to:'/Document',role:'ฝ่ายบุคลากร'},
 
     //commit
     {title:'รายชื่อผู้รับการประเมินผล',to:'/Committee',role:'กรรมการประเมิน'},
 
     //eva
     {title:'หน้าหลัก',to:'/Evaluatee',role:'ผู้รับการประเมินผล'},
+    {title:'แก้ไขข้อมูลส่วนตัว',to:'/Edit_eva',role:'ผู้รับการประเมินผล'},
 ]
 const navitem = computed(() =>
     roles.filter((item) => item.role.includes(user.value.role))
