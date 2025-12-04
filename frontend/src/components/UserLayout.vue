@@ -43,6 +43,7 @@ const fetchUser = async () =>{
 }
 onMounted(fetchUser)
 const logout = async () =>{
+    if(!confirm('ต้องการออกจากระบบใช่หรือไม่'))return
     localStorage.removeItem('token')
     router.push({path:'/login'})
 }

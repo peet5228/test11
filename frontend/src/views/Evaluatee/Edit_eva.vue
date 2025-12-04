@@ -3,8 +3,7 @@
         <v-row justify="center" align="center">
             <v-col cols="12" md="8" lg="6">
                 <v-card class="pa-4">
-                    <h1 class="text-center text-h5 font-weight-bold text-maroon">สมัครสมาชิก</h1>
-                    <p class="text-center text-sm mt-2">ระบบประเมินบุคลากรวิทยาลัยเทคนิคน่าน</p>
+                    <h1 class="text-center text-h5 font-weight-bold text-maroon">แก้ไขข้อมูลส่วนตัว</h1>
                     <v-form @submit.prevent="saveMember">
                         <v-row class="mt-4">
                             <v-col cols="12" md="6">
@@ -26,11 +25,10 @@
                                 <v-text-field v-model="confirmPassword" :error-messages="error.confirmPassword" type="password" label="ยืนยันรหัสผ่าน"></v-text-field>
                             </v-col>
                             <v-col cols="12">
-                                <v-select v-model="form.role" :items="['ฝ่ายบุคลากร','กรรมการประเมิน','ผู้รับการประเมินผล']" :error-messages="error.role" label="เลือกประเภทสมาชิก"></v-select>
+                                <v-alert v-model="form.role" :items="['ฝ่ายบุคลากร','กรรมการประเมิน','ผู้รับการประเมินผล']" :error-messages="error.role" label="เลือกประเภทสมาชิก"></v-alert>
                             </v-col>
                             <v-col cols="12" class="text-center">
-                                <v-btn class="btn-maroon text-white" type="submit">สมัคร</v-btn>
-                                <p class="text-center text-sm mt-2">มีบัญชีอยู่แล้ว? <router-link to="/login" class="text-maroon"><u>เข้าสู่ระบบ</u></router-link></p>
+                                <v-btn class="btn-maroon text-white" type="submit">แก้ไข</v-btn>
                             </v-col>
                         </v-row>
                     </v-form>
