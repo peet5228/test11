@@ -7,6 +7,7 @@ import Edit_eva from '@/views/Evaluatee/Edit_eva.vue'
 import Selfeva from '@/views/Evaluatee/Selfeva.vue'
 import Check_score from '@/views/Evaluatee/Check_score.vue'
 import Score_eva from '@/views/Evaluatee/Score_eva.vue'
+import Committee from '@/views/Committee/index.vue'
 
 // Staff
 import index from '@/views/Staff/index.vue'
@@ -26,6 +27,21 @@ const router = createRouter({
       path: '/login',
       name: 'LoginForm',
       component: LoginForm,
+    },
+    {
+      path: '/',
+      redirect: 'login',
+    },
+    {
+      path: '/Committee',
+      component: UserLayout,
+      children:[
+        {
+          path: '/Committee',
+          name: 'Committee',
+          component: Committee,
+        },
+      ]
     },
     {
       path: '/Evaluatee',
